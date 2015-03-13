@@ -1,0 +1,47 @@
+---
+title       : Developing Data Products
+subtitle    : mtcars dataset presentation
+author      : Afroz Hussain
+job         : Student at coursera
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+
+## Dataset 'mtcars'
+
+The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973-74 models)
+
+A data frame with 32 observations on 11 variables.
+
+--- .class #id
+
+## Dataset Structure
+
+```{r}
+library(datasets);data(mtcars)
+str(mtcars)
+
+```
+
+---
+## Scatter Plot
+
+```{r}
+plot(mtcars$mpg ~ mtcars$wt, col= 'blue', main='mpg vs weight scatter plot',
+     xlab = 'weight', ylab = 'mile per gallon (mpg)')
+abline(lm(mpg~wt, mtcars), col = 'red', lwd = '3')
+```
+
+
+---
+
+
+```{r}
+boxplot(mpg~cyl, mtcars , col = 'pink', xlab = 'Cylinder' , ylab = 'mile per gallon (mpg)', main = 'Miles per Gallon vs Cylinder')
+```
+
